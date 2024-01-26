@@ -5,9 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server",
-    "build": "npm run build",  
-  "install": "npm install"
+    "dev": "nodemon server"
   },
   "author": "R A M B A B U  K A D A G A L A",
   "license": "ISC",
