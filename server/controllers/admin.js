@@ -1,7 +1,7 @@
 const adminSchema = require("../model/adminSchema.js");
 const emailExist = require("../utils/emailExist.js");
 const jwtTokenCreation= require("../utils/jwtToken.js")
-const bcrypt= require("bcrypt")
+const bcrypt= require("bcryptjs")
 
 
 const login = async (req, res) =>{

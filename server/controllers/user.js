@@ -4,7 +4,7 @@ const {emailSend}= require("../utils/emailSent.js")
 const emailValidation = require("../utils/emailValidation.js");
 const jwtTokenCreation= require("../utils/jwtToken.js")
 const joi=require("joi")
-const  bcrypt = require("bcrypt")
+const  bcrypt = require("bcryptjs")
 const register= async (req, res) =>{
 
  try {
