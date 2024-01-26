@@ -4,7 +4,8 @@
   "description": "this is a server for amitter comapny",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npm run build"
   },
   "author": "R A M B A B U  K A D A G A L A",
   "license": "ISC",
