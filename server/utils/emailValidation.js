@@ -2,7 +2,7 @@ let verify=require("deep-email-validator");
 let emailValidation= async (email) =>{
     try{
         let {valid}=await verify.validate(email)
-         
+         console.log(email, valid)
         if(valid){
             return data={
                 "status": "ok",
