@@ -6,18 +6,19 @@ const jwtTokenCreation= require("../utils/jwtToken.js")
 const joi=require("joi")
 const  bcrypt = require("bcryptjs")
 const register= async (req, res) =>{
-
+ // vaildating the user given data by using joi module
+ let isVailed= joi.object({
+    name: joi.string().required(),
+    email: joi.string().email().required(),
+    password: joi.string().min(6).max(20).alphanum().required()
+}).validate(req.body)
  try {
-    // vaildating the user given data by using joi module
-    let isVailed= joi.object({
-        name: joi.string().required(),
-        email: joi.string().email().required(),
-        password: joi.string().min(6).max(20).alphanum().required()
-    }).validate(req.body)
+    
     // there is no error in the validation of user data
     if(!isVailed.error){
         // checking the user entered email is valid or not
     const verify= await emailValidation(req.body.email);
+    console.log(verify)
     if(verify.status==="ok"){
         // checking the user entered email already existing in the db or not
         const emailData=await emailExist(req.body.email, userSchema);
